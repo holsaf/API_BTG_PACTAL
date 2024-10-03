@@ -12,7 +12,7 @@ public class Fondo {
     private String id;
     private String nombre;
     private String tipoFondo;
-    private double montoMinimoVinculacion;
+    private double montoMinimoApertura;
     private double saldoTotal;
 
 }

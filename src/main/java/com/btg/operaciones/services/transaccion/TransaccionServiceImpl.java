@@ -3,8 +3,8 @@ package com.btg.operaciones.services.transaccion;
 import com.btg.operaciones.entities.Cliente;
 import com.btg.operaciones.entities.Fondo;
 import com.btg.operaciones.entities.Transaccion;
-import com.btg.operaciones.models.Notificacion;
-import com.btg.operaciones.models.TransaccionRequest;
+import com.btg.operaciones.dtos.NotificacionDto;
+import com.btg.operaciones.dtos.TransaccionPostDto;
 import com.btg.operaciones.repositories.TransaccionRepository;
 import com.btg.operaciones.services.notificador.NotificadorService;
 import com.btg.operaciones.services.cliente.ClienteServiceImpl;
@@ -36,7 +36,7 @@ public class TransaccionServiceImpl implements TransaccionService {
     }
 
 
-    public Transaccion guardarTransaccion(TransaccionRequest request) {
+    public Transaccion guardarTransaccion(TransaccionPostDto request) {
         this.transaccion = new Transaccion();
         this.transaccion.setTipoTransaccion(request.getTipoTransaccion().toString());
         this.transaccion.setTipoNotificacion(request.getTipoNotificacion().toString());
@@ -56,8 +56,8 @@ public class TransaccionServiceImpl implements TransaccionService {
     }
 
     private void envioNotificacion(Cliente cliente, Fondo fondo) {
-        Notificacion notificacion = new Notificacion(cliente, fondo.getNombre(), transaccion.getTipoTransaccion(), transaccion.getTipoNotificacion());
-        notificadorService.notificar(notificacion);
+        NotificacionDto notificacionDto = new NotificacionDto(cliente, fondo.getNombre(), transaccion.getTipoTransaccion(), transaccion.getTipoNotificacion());
+        notificadorService.notificar(notificacionDto);
     }
 
 

@@ -1,9 +1,8 @@
 package com.btg.operaciones.services.notificador;
 
-import com.btg.operaciones.entities.Transaccion;
-import com.btg.operaciones.models.Notificacion;
+import com.btg.operaciones.dtos.NotificacionDto;
 
 public interface NotificadorService {
-    void notificar(Notificacion notificacion);
+    void notificar(NotificacionDto notificacionDto);
 
 }

@@ -1,6 +1,6 @@
 package com.btg.operaciones.controllers;
 
-import com.btg.operaciones.models.TransaccionRequest;
+import com.btg.operaciones.dtos.TransaccionPostDto;
 import com.btg.operaciones.services.transaccion.TransaccionService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
@@ -20,8 +20,8 @@ public class TransaccionController {
     }
 
     @PostMapping()
-    public ResponseEntity<?> crearTransaccion(@Valid @RequestBody TransaccionRequest transaccionRequest){
-        var response = this.transaccionService.guardarTransaccion(transaccionRequest);
+    public ResponseEntity<?> crearTransaccion(@Valid @RequestBody TransaccionPostDto transaccionPostDto){
+        var response = this.transaccionService.guardarTransaccion(transaccionPostDto);
         return ResponseEntity.ok(response);
     }
 

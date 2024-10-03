@@ -21,14 +21,11 @@ public class Cliente {
 
     private String nombre;
 
-    @NotEmpty
     private String email;
 
-    //validate international phone number
-    @Pattern(regexp = "^(\\+\\d{1,3}[- ]?)?\\d{10}$")
     private String telefono;
 
-    @DecimalMin("500000.00")
+
     private double saldo;
 
 }

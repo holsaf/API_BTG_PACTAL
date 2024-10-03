@@ -1,6 +1,6 @@
 package com.btg.operaciones.entities;
 
-import jakarta.persistence.Id;
+import org.springframework.data.annotation.Id;
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -15,7 +15,8 @@ public class Transaccion {
     private UUID uniqueId;
     private String clienteId;
     private String fondoId;
-    private String tipo; // "apertura" o "cancelacion"
+    private String tipoTransaccion; // "apertura" o "cancelacion"
+    private String tipoNotificacion; // "email" o "sms"
     private double monto;
     private Date fecha;
 

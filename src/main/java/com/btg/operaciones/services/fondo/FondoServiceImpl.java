@@ -1,15 +1,15 @@
-package com.btg.operaciones.services;
+package com.btg.operaciones.services.fondo;
 
 import com.btg.operaciones.entities.Fondo;
 import com.btg.operaciones.repositories.FondoRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class FondoService {
+public class FondoServiceImpl {
 
     private final FondoRepository fondoRepository;
 
-    public FondoService(FondoRepository fondoRepository){
+    public FondoServiceImpl(FondoRepository fondoRepository){
         this.fondoRepository = fondoRepository;
     }
 

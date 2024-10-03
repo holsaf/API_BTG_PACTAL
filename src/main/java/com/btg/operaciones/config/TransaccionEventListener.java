@@ -15,7 +15,7 @@ public class TransaccionEventListener extends AbstractMongoEventListener<Transac
         Transaccion entity = event.getSource();
 
         if (entity.getUniqueId() == null) {
-            entity.setId(UUID.randomUUID());
+            entity.setUniqueId(UUID.randomUUID());
         }
     }
 }

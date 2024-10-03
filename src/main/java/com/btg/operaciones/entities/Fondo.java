@@ -1,7 +1,7 @@
 package com.btg.operaciones.entities;
 
 
-import jakarta.persistence.Id;
+import org.springframework.data.annotation.Id;
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -11,6 +11,7 @@ public class Fondo {
     @Id
     private String id;
     private String nombre;
+    private String tipoFondo;
     private double montoMinimoVinculacion;
     private double saldoTotal;
 
